@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SAI KIRAN MANDOTI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="my-content">
+	
+</div>
+   
+    <header>
+	
+        <h1>SAI KIRAN MANDOTI</h1>
+		
+    </header>
+    
+    <section id="programs">
+        <h2>factorial using functions</h2>
+        <p>#include<stdio.h>
+void factorial();<br>
+int main()<br>
+{<br>
+	factorial();<br>
+	return 1;<br>
+}<br>
+void factorial()<br>
+{<br>
+	int i,n,f=1;<br>
+	printf("Enter a number: ");<br>
+	scanf("%d",&n);<br>
+	for(i=1;i<=n;i++)<br>
+	{<br>
+		f=f*i;<br>
+	}<br>
+	printf("factorial %d  is: %d\n",n,f);<br>
+}</p>
+    </section>
+    <section id="programs">
+        <h2>prime or not using functions</h2>
+		<p>#include<stdio.h><br>
+void prime();<br>
+int main()<br>
+{<br>
+	prime();<br>
+	return 1;<br>
+}<br>
+void prime()<br>
+{<br>
+	int i,n,count=0;<br>
+	printf("Enter a number: ");<br>
+	scanf("%d",&n);<br>
+	for(i=1;i<=n;i++) <br>
+	{<br>
+		if(n%i==0)<br>
+		count++;<br>
+	}<br>
+	if(count==2)<br>
+	{<br>
+	printf("%d is a prime number",n);<br>
+	}<br>
+	else<br>
+	{<br>
+	printf("%d is not a prime number",n);<br>
+	}<br>
+}</p>
+    </section>
+    <section id="programs">
+        <h2>multiplication table using funtions</h2>
+        <p>#include<stdio.h><br>
+void m_table();<br>
+int main()<br>
+{<br>
+	m_table();<br>
+	return 1;<br>
+}<br>
+void m_table()<br>
+{<br>
+	int i,n;<br>
+	printf("Enter a number: ");<br>
+	scanf("%d",&n);<br>
+	for(i=1;i<=10;i++)<br>
+	{<br>
+		printf("%d*%d=%d\n",n,i,n*i);<br>
+	}<br>
+}</p>
+    </section>
+    <section id="programs">
+        <h2> checking alphabet using functions</h2>
+        <p>#include<stdio.h><br>
+int main()<br>
+{<br>
+	alphabet();<br>
+	return 1;<br>
+}<br>
+void alphabet()<br>
+{<br>
+	char ch;<br>
+	printf("Enter a character: ");<br>
+	scanf("%c",&ch);<br>
+	if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))  <br>
+	printf("It is an alphabet\n");<br>
+	else<br>
+	printf("It is not an alphabet\n");<br>
+	
+}</p>
+        
+    </section>
+	<section id="programs">
+	     <h2>max using functions</h2>
+		<p>#include<stdio.h><br>
+void max();<br>
+int main()<br>
+{<br>
+	max();<br>
+	return 1;<br>
+}<br>
+void max()<br>
+{<br>
+	int max,a,b;<br>
+	printf("Enter two numbers: ");<br>
+	scanf("%d%d",&a,&b);<br>
+	if(a>b)<br>
+	printf("Maximum number is: %d\n",a);<br>
+	else if(b>a)<br>
+	printf("Maximum number is: %d\n",b);<br>
+	else<br>
+	printf("Both are same\n");<br><br>
+	
+}</p><br>
+	</section>
+	<section id="demonstrations"> 
+          <h2>call by value</h2>
+			<p>#include<stdio.h><br>
+void modify(int n);<br>
+int main()<br>
+{<br>
+	int n=10;<br>
+	printf("Before modify n= %d\n",n);<br>
+	modify(n);<br>
+	printf("After modify n= %d\n",n);<br>
+	return 1;<br>
+}<br>
+void modify(int n)<br>
+{<br>
+	n=n+10;<br>
+	printf("From modify n= %d\n",n);<br>
+}</p>
+	</section>
+	</section>
+	<section id="demonstrations"> 
+          <h2>call by reference</h2>
+			<p>#include<stdio.h><br>
+void modify(int *p);<br>
+int main()<br>
+{<br>
+	int n=10;<br>
+	printf("Before modify n= %d\n",n);<br>
+	modify(&n);<br>
+	printf("After modify n= %d\n",n);<br>
+	return 1;<br>
+}<br>
+void modify(int *p)<br>
+{<br>
+	*p=*p+10;<br>
+}  </p>
+	</section>
+    <footer>
+        <p>&copy; 2024 Sai Kiran Mandoti. All Rights Reserved.</p>
+    </footer>	
+</body>
+</html>
