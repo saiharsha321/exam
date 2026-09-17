@@ -1,0 +1,35 @@
+import java.util.*;
+import javax.crypto.*;
+import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
+
+public class DES1 {
+    public static void main(String[] args) throws Exception {
+
+        Scanner sc = new Scanner(System.in);
+
+        String key = "ThisIsSecretEncryptionKy";
+        SecretKey sk = new SecretKeySpec(
+            key.getBytes(StandardCharsets.UTF_8), "DESede");
+
+        Cipher c = Cipher.getInstance("DESede");
+
+        System.out.print("Enter the string: ");
+        String text = sc.nextLine();
+
+        // Encrypt
+        c.init(Cipher.ENCRYPT_MODE, sk);
+        String enc = Base64.getEncoder().encodeToString(
+            c.doFinal(text.getBytes(StandardCharsets.UTF_8)));
+
+        // Decrypt
+        c.init(Cipher.DECRYPT_MODE, sk);
+        String dec = new String(
+            c.doFinal(Base64.getDecoder().decode(enc)),
+            StandardCharsets.UTF_8);
+
+        System.out.println("\nString To Encrypt : " + text);
+        System.out.println("Encrypted Value   : " + enc);
+        System.out.println("Decrypted Value   : " + dec);
+    }
+}
