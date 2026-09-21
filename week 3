@@ -1,0 +1,26 @@
+// function that calculate interest 
+void calculateInterest(double principal, double rate, double time) { 
+double interest = principal * rate * time / 100; 
+print("Simple interest is $interest"); 
+} 
+void main() { 
+double principal = 5000; 
+double time = 3; 
+double rate = 3; 
+calculateInterest(principal, rate, time); 
+} 
+
+
+
+
+//To find the sum of 2  numbers 
+// Here num1 and num2 are parameters 
+void add(int num1, int num2){ 
+int sum; 
+sum = num1 + num2; 
+print("The sum is $sum"); 
+} 
+void main(){ 
+// Here 10 and 20 are arguments 
+add(10, 20); 
+} 
