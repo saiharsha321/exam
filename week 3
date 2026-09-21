@@ -24,3 +24,48 @@ void main(){
 // Here 10 and 20 are arguments 
 add(10, 20); 
 } 
+
+
+//Constuctors  
+class Student { 
+String? name; 
+int? age; 
+int? rollNumber; 
+// Constructor 
+Student(String name, int age, int rollNumber) { 
+print( 
+"Constructor called"); // this is for checking the constructor is called or not. 
+this.name = name; 
+this.age = age; 
+this.rollNumber = rollNumber; 
+} 
+} 
+void main() { 
+// Here student is object of class Student. 
+Student student = Student("John", 20, 1); 
+print("Name: ${student.name}"); 
+print("Age: ${student.age}"); 
+print("Roll Number: ${student.rollNumber}"); 
+} 
+
+
+
+Inheritance example 
+class Laptop { 
+// Constructor 
+Laptop({String name, String color}) { 
+print("Laptop constructor"); 
+print("Name: $name"); 
+print("Color: $color"); 
+} 
+} 
+class MacBook extends Laptop { 
+// Constructor 
+10 
+MacBook({String name, String color}) : super(name: name, color: color) { 
+print("MacBook constructor"); 
+} 
+} 
+void main() { 
+var macbook = MacBook(name: "MacBook Pro", color: "Silver"); 
+} 
