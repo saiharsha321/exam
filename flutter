@@ -1,0 +1,116 @@
+// satefull and stateless
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: Home()));
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Widgets")),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Hello Flutter"),
+          Counter(),
+        ],
+      ),
+    );
+  }
+}
+
+class Counter extends StatefulWidget {
+  @override
+  State<Counter> createState() => CounterState();
+}
+
+class CounterState extends State<Counter> {
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      Text("Count: $count"),
+      ElevatedButton(
+        onPressed: () => setState(() => count++),
+        child: Text("Increment"),
+      ),
+    ]);
+  }
+}
+
+// state management setstate
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: Home()));
+
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => HomeState();
+}
+
+class HomeState extends State<Home> {
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("setState")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Count: $count"),
+            ElevatedButton(
+              onPressed: () => setState(() => count++),
+              child: Text("Increment"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// using provider
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+void main() => runApp(
+  ChangeNotifierProvider(
+    create: (_) => Counter(),
+    child: MaterialApp(home: Home()),
+  ),
+);
+
+class Counter extends ChangeNotifier {
+  int count = 0;
+
+  void increment() {
+    count++;
+    notifyListeners();
+  }
+}
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Provider")),
+      body: Center(
+        child: Consumer<Counter>(
+          builder: (_, c, __) => Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Count: ${c.count}"),
+              ElevatedButton(
+                onPressed: c.increment,
+                child: Text("Increment"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
